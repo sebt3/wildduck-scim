@@ -1,0 +1,7 @@
+/LICENSE
+/index.js
+/config/*
+!/config/wildduck.json
+/lib
+/node_modules
+/logs

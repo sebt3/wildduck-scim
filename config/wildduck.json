@@ -1,0 +1,104 @@
+{
+  "scimgateway": {
+    "port": 8880,
+    "localhostonly": false,
+    "payloadSize": null,
+    "scim": {
+      "version": "2.0",
+      "customSchema": null,
+      "skipTypeConvert": false,
+      "usePutSoftSync": false,
+      "usePutGroupMemberOfUser": false
+    },
+    "log": {
+      "loglevel": {
+        "file": "off",
+        "console": "process.env.LOG_LEVEL"
+      },
+      "customMasking": null
+    },
+    "auth": {
+      "basic": [
+        {
+          "username": "",
+          "password": "",
+          "readOnly": true,
+          "baseEntities": []
+        }
+      ],
+      "bearerToken": [
+        {
+          "token": "process.env.OID_TOKEN",
+          "readOnly": false,
+          "baseEntities": []
+        }
+      ],
+      "bearerJwtAzure": [
+        {
+          "tenantIdGUID": null,
+          "readOnly": true,
+          "baseEntities": []
+        }
+      ],
+      "bearerJwt": [
+        {
+          "secret": null,
+          "publicKey": null,
+          "options": {
+            "issuer": null
+          },
+          "readOnly": true,
+          "baseEntities": []
+        }
+      ],
+      "bearerOAuth": [
+        {
+          "client_id": null,
+          "client_secret": null,
+          "readOnly": true,
+          "baseEntities": []
+        }
+      ],
+      "passThrough": {
+        "enabled": false,
+        "readOnly": false,
+        "baseEntities": []
+      }
+    },
+    "certificate": {
+      "key": null,
+      "cert": null,
+      "ca": null,
+      "pfx": {
+        "bundle": null,
+        "password": null
+      }
+    },
+    "ipAllowList": [],
+    "emailOnError": {
+      "smtp": {
+        "enabled": false,
+        "host": null,
+        "port": 587,
+        "proxy": null,
+        "authenticate": true,
+        "username": null,
+        "password": null,
+        "sendInterval": 15,
+        "to": null,
+        "cc": null
+      }
+    },
+    "kubernetes": {
+      "enabled": true,
+      "shutdownTimeout": 15000,
+      "forceExitTimeout": 1000
+    }
+  },
+  "endpoint": {
+    "api": "process.env.WILDDUCK_API",
+    "token": "process.env.WILDDUCK_TOKEN",
+    "domain": "process.env.WILDDUCK_DOMAIN",
+    "defaultPasswd": "process.env.WILDDUCK_INITIAL_PASSWD"
+  }
+}
